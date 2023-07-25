@@ -1,31 +1,24 @@
-# Purchase Item - Error Handling 
-The smart contract helps the customers to purchase any item by sending the exact amount of Ether required. It creates a secure yet transparent solution for conducting business transactions between consumers and sellers.
+# Eligibility Checker
+The EligibilityChecker smart contract is a basic Solidity contract that implements functions to check eligibility for voting, buying a car, and taking a pension. It utilizes the require(), assert(), and revert() statements to implement the eligibility criteria in each case.
 
-## Getting Started
+## Smart Contract Details
+The smart contract has the following state variables:
+* age: Age of the individual, taken from the user, used to check eligibility for voting, buying a car, and taking a pension.
+* hasValidLicense: To check whether the individual has a valid driver's license (used for buying a car).
+* hasValidPensionPlan: To check whether the individual has a valid pension plan (used for taking a pension).
 
-### To deploy and interact with the contract, you need the following:
-* An Ethereum development environment (eg. Remix).
-* An Ethereum wallet (eg. MetaMask) connected to the desired network (e.g., local development or testnet).
+## Functions
 
-### Deployment
+* checkEligibilityToVote(): Checks whether the individual is eligible to vote. It requires the age to be at least 18 years.
 
-1. Compile the Solidity smart contract.
-2. Deploy the contract to your desired Ethereum network.
-3. Take note of the deployed contract address.
+* checkEligibilityToBuyCar(): Checks whether the individual is eligible to buy a car. It requires the age to be at least 21 years and that the individual has a valid driver's license.
 
-## Features
-* Purchase confirmation: Buyers can verify their purchases by transferring the amount of Ether needed for a particular good or service.
-* Verification of Payment: The smart contract checks that the payment amount matches the total cost of the purchase.
-* Refund Procedure: Buyers may cancel their order and obtain a full refund in the event of a cancellation or a failed transaction.
-* Withdrawal: Following successful sales, sellers may take their money out of the contract.
+* checkEligibilityForPension(): Checks whether the individual is eligible to take a pension. It requires the age to be at least 60 years and that the individual has a valid pension plan.
 
 ## Usage
-* itemSold(): Helps customers to confirm their orders by providing exactly how much Ether is needed. This process carries out the purchase transaction and sends the money to the seller.
+* Deploy the EligibilityChecker smart contract by providing the required constructor parameters (_age, _hasValidLicense, and _hasValidPensionPlan).
 
-* CancelPurchase(): Lets buyers cancel their purchase and receive a full refund of the payment amount.
-
-* Withdrawal(): Allows sellers to withdraw their funds from the contract after successful purchases.
-
+* Use the checkEligibilityToVote(), checkEligibilityToBuyCar(), and checkEligibilityForPension() functions to check eligibility for different cases.
 
 ## Built With
 * Solidity - The programming language to write the smart contract.
@@ -33,7 +26,9 @@ The smart contract helps the customers to purchase any item by sending the exact
 
 ## Authors
 Mrudhula Dubasi
+
 mrudhuladubasi@gmail.com
+
 #Chandigarh University
 
 ## License
